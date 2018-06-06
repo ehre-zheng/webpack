@@ -22,7 +22,7 @@
     {{#lint}}
     "lint": "eslint --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
     {{/lint}}
-    "build": "node build/build.js"
+    "build": "node build/build.js",
     "build-sit": "cross-env NODE_ENV=sit node build/build.js",
     "build-uat": "cross-env NODE_ENV=uat node build/build.js",
     "build-pre": "cross-env NODE_ENV=pre node build/build.js",

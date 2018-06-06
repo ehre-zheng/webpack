@@ -69,17 +69,14 @@ router.beforeEach((to, from, next) => {
             store.commit('SET_DIRECTION_NAME', 'slide-left');
         }
     }
-    {{#if_or wechatConfig }}
+    {{#wechatConfig}}
     isWeChatInit(next)
     // 打开遮罩
     // store.commit('UPDATE_LOADING_STATUS', {isLoading: true})
     // 本地测试  TODO
     //next();
-    {{/if_or}}
-  // 页面跳转前将页面位子初始化
-    {{#if_or !wechatConfig }}
-      next();
-    {{/if_or}}
+    {{/wechatConfig}}
+
 
 
 });
