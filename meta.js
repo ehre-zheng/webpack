@@ -31,7 +31,7 @@ module.exports = {
       return templateVersion
     },
   },
-  
+
   prompts: {
     name: {
       when: 'isNotTest',
@@ -73,6 +73,18 @@ module.exports = {
       when: 'isNotTest',
       type: 'confirm',
       message: 'Install vue-router?',
+    },
+    vuex:{
+      "type": "confirm",
+      "message": "Install vuex?"
+    },
+    vux:{
+      "type": "confirm",
+      "message": "Install vux?"
+    },
+    wechatConfig:{
+      "type": "confirm",
+      "message": "Config wehcat jssdk?"
     },
     lint: {
       when: 'isNotTest',
@@ -170,6 +182,8 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
+     'src/store/**/*': 'vuex' , //加入自己的目录
+     'src/assets/js/wechat.js': 'wechatConfig' //加入自己的目录
   },
   complete: function(data, { chalk }) {
     const green = chalk.green

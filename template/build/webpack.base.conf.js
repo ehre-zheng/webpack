@@ -94,3 +94,20 @@ module.exports = {
     child_process: 'empty'
   }
 }
+{{#vux}}
+// vux2必须配合vux-loader进行配置
+const vuxLoader = require('vux-loader')
+const webpackConfig = originalConfig // 原来的 module.exports 代码赋值给变量 webpackConfig
+
+module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: [
+      {
+        name:'vux-ui'
+      },
+      {
+      name: 'less-theme',
+      path: 'src/assets/styles/theme.less'
+      }
+  ]
+})
+{{/vux}}
