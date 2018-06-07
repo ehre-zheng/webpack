@@ -1,61 +1,76 @@
-# vue-webpack-boilerplate
+# vue-webpack-boilerplate for own
 
-> A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
+> 本模版是基于[官方模版](http://vuejs-templates.github.io/webpack)Fork后改造后用于自身的项目定制话的模版（主要适用于移动或者微信公众号开发）
 
-> This template is Vue 2.0 compatible. For Vue 1.x use this command: `vue init webpack#1.0 my-project`
+> 模版架构是基于vue2 + webpack3 + axios + vue-router(可选) + vuex(可选) + vux(可选一个UI框架) + 微信公众号相关的配置（可选）+（后面部分同官网）
 
-## Documentation
-
-- [For this template](http://vuejs-templates.github.io/webpack): common questions specific to this template are answered and each part is described in greater detail
-- [For Vue 2.0](http://vuejs.org/guide/): general information about how to work with Vue, not specific to this template
+>模版后续回添加一些公用方法，环境配置等等，模版将根据具体场景继续优化
 
 ## Usage
 
-This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It is recommended to use npm 3+ for a more efficient dependency tree.**
+同官方模版一样依赖于  [vue-cli](https://github.com/vuejs/vue-cli). **It is recommended to use npm 3+ for a more efficient dependency tree.**
 
 ``` bash
 $ npm install -g vue-cli
-$ vue init webpack my-project
+$ vue init ehre-zheng/webpack my-project
 $ cd my-project
 $ npm install
 $ npm run dev
 ```
 
-This will scaffold the project using the `master` branch. If you wish to use the latest version of the webpack template, do the following instead:
+模版默认用的是`master` 主分支. 如果想使用最新的模版请使用一下命令替换
 
 ``` bash
-$ vue init webpack#develop my-project
+$ vue init ehre-zheng/webpack#vue-tpl-M001 my-project
 ```
 
-:warning: **The develop branch is not considered stable and can contain bugs or not build at all, so use at your own risk.**
+:warning: ** vue-tpl-M001 分支并不是稳定版本，请注意**
 
-The development server will run on port 8080 by default. If that port is already in use on your machine, the next free port will be used.
+# Project Structure
 
-## What's Included
+``` bash
+.
+├── build/                      # webpack config files
+│   └── ...
+├── config/
+│   ├── index.js                # main project config
+│   └── ...
+├── src/
+│   ├── main.js                 # app entry file
+│   ├── App.vue                 # main app component
+│   ├── router/                 # router components
+│   │   └── ...
+│   ├── store/                  # vuex
+│   │   └── ...
+│   ├── components/             # ui components
+│   │   └── ...
+│   └── assets/                 # module assets (processed by webpack)
+│       └── ...
+├── static/                     # pure static assets (directly copied)
+├── test/
+│   └── unit/                   # unit tests
+│   │   ├── specs/              # test spec files
+│   │   ├── eslintrc            # config file for eslint with extra settings only for unit tests
+│   │   ├── index.js            # test build entry file
+│   │   ├── jest.conf.js        # Config file when using Jest for unit tests
+│   │   ├── karma.conf.js       # test runner config file when using Karma for unit tests
+│   │   └── setup.js            # file that runs before Jest runs your unit tests
+│   └── e2e/                    # e2e tests
+│   │   ├── specs/              # test spec files
+│   │   ├── custom-assertions/  # custom assertions for e2e tests
+│   │   ├── runner.js           # test runner script
+│   │   └── nightwatch.conf.js  # test runner config file
+├── .babelrc                    # babel config
+├── .editorconfig               # indentation, spaces/tabs and similar settings for your editor
+├── .eslintrc.js                # eslint config
+├── .eslintignore               # eslint ignore rules
+├── .gitignore                  # sensible defaults for gitignore
+├── .postcssrc.js               # postcss config
+├── index.html                  # index.html template
+├── package.json                # build scripts and dependencies
+└── README.md                   # Default README file
+```
 
-- `npm run dev`: first-in-class development experience.
-  - Webpack + `vue-loader` for single file Vue components.
-  - State preserving hot-reload
-  - State preserving compilation error overlay
-  - Lint-on-save with ESLint
-  - Source maps
-
-- `npm run build`: Production ready build.
-  - JavaScript minified with [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony).
-  - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
-  - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
-  - Static assets compiled with version hashes for efficient long-term caching, and an auto-generated production `index.html` with proper URLs to these generated assets.
-  - Use `npm run build --report`to build with bundle size analytics.
-
-- `npm run unit`: Unit tests run in [JSDOM](https://github.com/tmpvar/jsdom) with [Jest](https://facebook.github.io/jest/), or in PhantomJS with Karma + Mocha + karma-webpack.
-  - Supports ES2015+ in test files.
-  - Easy mocking.
-
-- `npm run e2e`: End-to-end tests with [Nightwatch](http://nightwatchjs.org/).
-  - Run tests in multiple browsers in parallel.
-  - Works with one command out of the box:
-    - Selenium and chromedriver dependencies automatically handled.
-    - Automatically spawns the Selenium server.
 
 ### Fork It And Make Your Own
 
