@@ -19,7 +19,7 @@ function resolve (dir) {
   }
 }){{/lint}}
 
-module.exports = {
+let originalConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
@@ -97,9 +97,8 @@ module.exports = {
 {{#vux}}
 // vux2必须配合vux-loader进行配置
 const vuxLoader = require('vux-loader')
-const webpackConfig = originalConfig // 原来的 module.exports 代码赋值给变量 webpackConfig
-
-module.exports = vuxLoader.merge(webpackConfig, {
+//const webpackConfig = originalConfig // 原来的 module.exports 代码赋值给变量 webpackConfig
+ webpackConfig =vuxLoader.merge(webpackConfig, {
   plugins: [
       {
         name:'vux-ui'
@@ -111,3 +110,4 @@ module.exports = vuxLoader.merge(webpackConfig, {
   ]
 })
 {{/vux}}
+module.exports = webpackConfig

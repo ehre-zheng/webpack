@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import { WechatPlugin } from 'vux'
 import Ajax from '@/assets/js/ajax'
 var wx = require('weixin-js-sdk');
 // Vue.wechat 可以直接访问 wx 对象。

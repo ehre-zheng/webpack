@@ -7,7 +7,8 @@ import axios from 'axios'
 
 //因此如果需要兼容低版本浏览器(caniuse)，需要引入polyfill。
 //Polyfill 项目使用的是 es6-promise
-promise.polyfill();
+//import promise from 'es6-promise'
+//promise.polyfill();
 
 // console.log(ENV);
 /* 创建一个新的 AXIOS 对象，确保原有的对象不变 */
